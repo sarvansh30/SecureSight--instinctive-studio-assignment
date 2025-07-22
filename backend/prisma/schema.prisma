@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -28,7 +27,7 @@ model Incident{
   tsStart       DateTime
   tsEnd         DateTime
   thumbnailUrl  String
-  resolved      Boolean
+  resolved      Boolean   @default(false)
 
   camera   Camera @relation(fields: [cameraId], references: [id])
 }

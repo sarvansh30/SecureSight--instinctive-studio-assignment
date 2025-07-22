@@ -1,4 +1,4 @@
-// prisma/seed.js
+
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
@@ -19,16 +19,16 @@ async function main() {
 
   console.log('Created cameras...');
 
-  // Create Incidents
+
   await prisma.incident.createMany({
     data: [
-      // Incidents for Camera 1
+   
       {
         cameraId: camera1.id,
         type: 'Unauthorised Access',
         tsStart: new Date(new Date().setHours(new Date().getHours() - 20)),
         tsEnd: new Date(new Date().setHours(new Date().getHours() - 19, 55)),
-        thumbnailUrl: '/thumbnails/thumb1.jpg',
+        thumbnailUrl: '/thumbnails/thumb1.jpg'
       },
       {
         cameraId: camera1.id,
@@ -52,7 +52,7 @@ async function main() {
         tsEnd: new Date(new Date().setHours(new Date().getHours() - 8, 59)),
         thumbnailUrl: '/thumbnails/thumb4.jpg',
       },
-      // Incidents for Camera 3
+     
       {
         cameraId: camera3.id,
         type: 'Unauthorised Access',
@@ -67,7 +67,7 @@ async function main() {
         tsEnd: new Date(new Date().setHours(new Date().getHours() - 1, 59)),
         thumbnailUrl: '/thumbnails/thumb6.jpg',
       },
-      // Add 6 more incidents to reach 12+
+      
       { cameraId: camera1.id, type: 'Safety Hazard', tsStart: new Date(new Date().setMinutes(new Date().getMinutes() - 90)), tsEnd: new Date(new Date().setMinutes(new Date().getMinutes() - 85)), thumbnailUrl: '/thumbnails/thumb7.jpg' },
       { cameraId: camera2.id, type: 'Face Recognised', tsStart: new Date(new Date().setMinutes(new Date().getMinutes() - 80)), tsEnd: new Date(new Date().setMinutes(new Date().getMinutes() - 75)), thumbnailUrl: '/thumbnails/thumb8.jpg' },
       { cameraId: camera3.id, type: 'Unauthorised Access', tsStart: new Date(new Date().setMinutes(new Date().getMinutes() - 70)), tsEnd: new Date(new Date().setMinutes(new Date().getMinutes() - 65)), thumbnailUrl: '/thumbnails/thumb9.jpg' },
