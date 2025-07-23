@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex p-8 justify-between">
             <div className="flex gap-[10px] items-center">
             <LogoIcon className=""/>
-            <p className="text-white text-base font-jakarta  text-base">MANDLAC<span className="font-bold">X</span></p>
+            <p className="text-white text-base font-jakarta ">MANDLAC<span className="font-bold">X</span></p>
             </div>
 
             <nav className="flex items-center ">
@@ -37,7 +37,7 @@ const Header = () => {
             
             <div className="flex gap-[10px] items-center">
             <LogoIcon className=""/>
-            <p className="text-white text-base font-jakarta  text-base">MANDLAC<span className="font-bold">X</span></p>
+            <p className="text-white text-base font-jakarta ">MANDLAC<span className="font-bold">X</span></p>
             </div>
 
         </div>
