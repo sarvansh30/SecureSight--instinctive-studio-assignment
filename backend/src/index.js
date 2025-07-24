@@ -1,10 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
-
+import cors from 'cors';
 dotenv.config();
 
 const app = express();
+app.use(cors()); 
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3005;
 
@@ -34,26 +35,39 @@ app.get('/api/incidents', async (req, res) => {
   }
 });
 
-app.patch('/api/incidents/:id/resolve',async (req,res)=>{
+app.patch('/api/incidents/:id/resolve', async (req, res) => {
+  try {
+    const { id } = req.params;
 
-    try{
-    const {id} = req.params;
-
-    const resolveFlip = await prisma.incident.update({
-        where:{
-            id:Number(id),
-        },
-        data:{
-            resolved:true,
-        }
+    const incident = await prisma.incident.findUnique({
+      where: {
+        id: Number(id),
+      },
+      select: {
+        resolved: true,
+      },
     });
-    res.send(resolveFlip);
-    }
-    catch(error){
-        res.status(500).json({error:"Failed to resolve incident"});
+
+    if (!incident) {
+      return res.status(404).json({ error: 'Incident not found' });
     }
 
+    const updated = await prisma.incident.update({
+      where: {
+        id: Number(id),
+      },
+      data: {
+        resolved: !incident.resolved,
+      },
+    });
+
+    res.json(updated);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to toggle resolve state' });
+  }
 });
+
 
 app.listen(PORT,()=>{
     console.log(`Backend server running on PORT: ${PORT}`);

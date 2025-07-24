@@ -1,4 +1,4 @@
-const IncidentHeader = () => (
+const IncidentHeader = ({unresolved,resolved}:{unresolved:number;resolved:number}) => (
     <div className='flex items-center p-[16px] justify-between '>
         <div className='flex gap-2'>
             <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -7,7 +7,7 @@ const IncidentHeader = () => (
                 <path d="M13 11.5V13.5M13 15.5H13.005M17.865 16L13.865 8.99999C13.7777 8.84609 13.6513 8.71808 13.4984 8.62902C13.3456 8.53997 13.1719 8.49304 12.995 8.49304C12.8181 8.49304 12.6443 8.53997 12.4915 8.62902C12.3387 8.71808 12.2122 8.84609 12.125 8.99999L8.12496 16C8.03681 16.1527 7.99058 16.3259 7.99097 16.5022C7.99136 16.6785 8.03835 16.8516 8.12719 17.0039C8.21602 17.1562 8.34354 17.2823 8.49681 17.3694C8.65009 17.4565 8.82367 17.5016 8.99996 17.5H17C17.1754 17.4998 17.3477 17.4535 17.4996 17.3656C17.6515 17.2778 17.7776 17.1515 17.8652 16.9995C17.9529 16.8476 17.999 16.6752 17.9989 16.4997C17.9989 16.3243 17.9527 16.1519 17.865 16Z" stroke="#F87171" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <p className='font-semibold text-white font-jakarta text-lg '>Unresolved Incidents</p>
+            <p className='font-semibold text-white font-jakarta text-lg '>{unresolved} Unresolved Incidents</p>
         </div>
 
         <div className='flex items-center gap-2'>
@@ -33,7 +33,7 @@ const IncidentHeader = () => (
             <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 3L3.5 8.5L1 6M11 5L7.25 8.75L6.5 8" stroke="#22C55E" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <p className='text-white text-xs'>resolved incidents</p>
+            <p className='text-white text-xs'>{resolved} resolved incidents</p>
             </div>
 
         </div>
