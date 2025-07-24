@@ -48,31 +48,34 @@ const IncidentItem = ({
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -50 }}
       transition={{ duration: 0.3 }}
-      className="flex items-center gap-3 p-2 mb-1.5 text-white hover:bg-[#0f0f0f]"
+      className="flex items-center gap-3 p-1.5 text-white hover:bg-[#0f0f0f]"
     >
       <Image
         src={incident.thumbnailUrl}
         alt={`Thumbnail for ${incident.type}`}
         width={120}
         height={120}
-        className="h-[85px] w-[140px] rounded-md object-cover"
+        className="h-[88px] w-[140px] rounded-md object-cover"
       />
       <div className="flex flex-col h-[85px] justify-between flex-grow">
-        <div>
           <div className="flex items-center gap-2">
             {IconType && <IconType className="w-5 h-5" />}
             <p className="font-inter font-bold text-sm">{incident.type}</p>
           </div>
-          <div className="flex text-white items-center gap-1">
+         
+         <div className='pb-0.5'>
+           <div className="flex text-white items-center gap-1">
             <CameraIcon className="fill-white" />
             <p className="text-xs">{cameraMap[incident.cameraId]}</p>
           </div>
-        </div>
+         
         <div className="flex text-white items-center gap-1">
+          
           <ClockIcon className="fill-white" />
           <p className="text-xs font-bold">
             {formatIncidentTime(incident.tsStart, incident.tsEnd)}
           </p>
+        </div>
         </div>
       </div>
       <div
