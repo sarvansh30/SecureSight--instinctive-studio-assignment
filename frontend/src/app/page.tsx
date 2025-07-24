@@ -1,4 +1,5 @@
 import CameraPanel from "@/components/CameraPanel";
+import EclipseGlow from "@/components/EclipseGlow";
 import IncidentsPanels from "@/components/IncidentsPanels";
 import { Incident } from "@/types/IncidentType";
 async function getIncidents() {
@@ -18,7 +19,7 @@ export default async function Home() {
 
 
   return (
-    <main className="flex h-screen overflow-y-hidden">
+    <main className="flex h-screen ">
      <div className="flex gap-6 min-w-full  h-4/7 justify-center">
             <CameraPanel/>
             <IncidentsPanels
