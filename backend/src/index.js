@@ -5,7 +5,10 @@ import cors from 'cors';
 dotenv.config();
 
 const app = express();
-app.use(cors()); 
+const corsOptions = {
+  origin: process.env.FRONTEND_URL,
+};
+app.use(cors(corsOptions));
 const prisma = new PrismaClient();
 const PORT = process.env.PORT || 3005;
 
