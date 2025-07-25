@@ -9,12 +9,13 @@ import GunIcon from '@/icons/GunIcon';
 import FaceRecognisedIcon from '@/icons/FaceRecognisedIcon';
 import { motion } from 'framer-motion';
 
-const iconMap: { [key: string]: ComponentType<{ className?: string }> } = {
+const iconMap: { [key: string]: ComponentType<{ className: string }> } = {
   "Unauthorised Access": UnauthorisedIcon,
   "Gun Threat": GunIcon,
   "Face Recognised": FaceRecognisedIcon,
   "Safety Hazard": UnauthorisedIcon,
 };
+
 
 const cameraMap: { [key: string]: string } = {
   13: "Shop Floor A",
