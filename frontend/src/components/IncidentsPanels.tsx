@@ -36,7 +36,7 @@ export default function IncidentsPanels({
     }
     
     try {
-      await fetch(`http://localhost:3005/api/incidents/${incidentId}/resolve`, {
+      await fetch(`${process.env.BACKEND_URL}/api/incidents/${incidentId}/resolve`, {
         method: 'PATCH',
       });
     } catch (error) {

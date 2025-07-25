@@ -3,7 +3,7 @@ import EclipseGlow from "@/components/EclipseGlow";
 import IncidentsPanels from "@/components/IncidentsPanels";
 import { Incident } from "@/types/IncidentType";
 async function getIncidents() {
-  const res = await fetch('http://localhost:3005/api/incidents', {
+  const res = await fetch(`${process.env.BACKEND_URL}/api/incidents`, {
     cache: 'no-cache',
   });
   if (!res.ok) throw new Error('Failed to fetch incidents');
