@@ -4,6 +4,22 @@ This is a full-stack technical assessment for SecureSight, a fictional CCTV moni
 
 **Live Demo:** [DEMO LINK](https://secure-sight-instinctive-studio-ass.vercel.app/)
 
+## Frontend Functionalities
+
+-   **Incident List:** Displays a list of unresolved and resolved incidents fetched from the backend.
+-   **Optimistic UI:** When an incident's "Resolve" button is clicked, the UI updates instantly by moving the item between lists, providing a smooth user experience while the API request is processed in the background.
+-   **Interactive Camera Panel:** Shows a main camera feed and smaller thumbnails for other cameras. Clicking a thumbnail makes it the main active feed.
+-   **Animations:** Uses Framer Motion to animate the incident list when items are added or removed.
+-   **Styled Components:** The UI is built with Tailwind CSS and custom styling to match the Figma design, including custom fonts, colors, and a background glow effect.
+
+---
+
+## Future Improvements
+
+-   **Responsive Design:** The current design is focused on desktop. In the future, the layout will be made fully responsive to work on tablet and mobile devices.
+-   **Video Integration (Extra Credit):** The current camera panel uses static images. A future enhancement would be to replace these with actual video streams or `.mp4` files.
+-   **Cloud Storage for Thumbnails:** Currently, thumbnail images are stored locally in the `public` folder. In a production environment, these would be hosted on a dedicated static file server or a cloud storage service like AWS S3 or Cloudinary for better performance and scalability.
+
 ---
 
 ## Getting Started
@@ -132,18 +148,3 @@ The backend provides the following API endpoints.
 
 ---
 
-## Frontend Functionalities
-
--   **Incident List:** Displays a list of unresolved and resolved incidents fetched from the backend.
--   **Optimistic UI:** When an incident's "Resolve" button is clicked, the UI updates instantly by moving the item between lists, providing a smooth user experience while the API request is processed in the background.
--   **Interactive Camera Panel:** Shows a main camera feed and smaller thumbnails for other cameras. Clicking a thumbnail makes it the main active feed.
--   **Animations:** Uses Framer Motion to animate the incident list when items are added or removed.
--   **Styled Components:** The UI is built with Tailwind CSS and custom styling to match the Figma design, including custom fonts, colors, and a background glow effect.
-
----
-
-## Future Improvements
-
--   **Responsive Design:** The current design is focused on desktop. In the future, the layout will be made fully responsive to work on tablet and mobile devices.
--   **Video Integration (Extra Credit):** The current camera panel uses static images. A future enhancement would be to replace these with actual video streams or `.mp4` files.
--   **Cloud Storage for Thumbnails:** Currently, thumbnail images are stored locally in the `public` folder. In a production environment, these would be hosted on a dedicated static file server or a cloud storage service like AWS S3 or Cloudinary for better performance and scalability.
