@@ -2,7 +2,7 @@
 
 This is a full-stack technical assessment for SecureSight, a fictional CCTV monitoring software company. The project consists of a Next.js frontend and an Express.js backend that displays and manages security incidents from multiple camera feeds.
 
-**Live Demo:** [Link to your deployed frontend]
+**Live Demo:** [DEMO LINK](https://secure-sight-instinctive-studio-ass.vercel.app/)
 
 ---
 
